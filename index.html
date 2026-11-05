@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Road to Doomsday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <p class="kicker">Marathon MCU</p>
+      <h1>Road to <span>Doomsday</span></h1>
+      <p class="sub">Les films MCU essentiels (+ Loki), dans l'ordre chronologique de l'histoire, jusqu'à <em>Avengers : Doomsday</em>.</p>
+
+      <div class="countdown" id="countdown" aria-label="Compte à rebours avant Doomsday">
+        <div><b id="cd-d">--</b><span>jours</span></div>
+        <div><b id="cd-h">--</b><span>heures</span></div>
+        <div><b id="cd-m">--</b><span>min</span></div>
+        <div><b id="cd-s">--</b><span>sec</span></div>
+      </div>
+      <p class="release-note">Sortie en salles le 18 décembre 2026 (US) · <span id="pace"></span></p>
+
+      <div class="stats">
+        <div class="progress-wrap">
+          <div class="progress-label"><span id="count">0 / 0</span><span id="pct">0 %</span></div>
+          <div class="progress"><div class="progress-bar" id="bar"></div></div>
+        </div>
+        <div class="stat"><b id="left-time">—</b><span>restant à regarder</span></div>
+        <div class="stat"><b id="next-up">—</b><span>prochain film</span></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toolbar">
+    <div class="seg" role="group" aria-label="Ordre">
+      <button data-order="chrono" class="active">Chronologique</button>
+      <button data-order="release">Date de sortie</button>
+    </div>
+    <div class="seg" role="group" aria-label="Filtre">
+      <button data-filter="all" class="active">Tous</button>
+      <button data-filter="todo">À voir</button>
+      <button data-filter="done">Vus</button>
+    </div>
+    <label class="toggle"><input type="checkbox" id="series"> <span>+ WandaVision &amp; Falcon</span></label>
+    <input type="search" id="search" placeholder="Rechercher…" aria-label="Rechercher un film">
+    <button class="ghost" id="reset">Réinitialiser</button>
+  </nav>
+
+  <main>
+    <ol class="timeline" id="list"></ol>
+  </main>
+
+  <footer>
+    Progression sauvegardée dans ce navigateur. Affiches : Wikipédia · Bandes-annonces : YouTube.
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
